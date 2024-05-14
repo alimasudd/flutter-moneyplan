@@ -11,6 +11,17 @@ class AddDataController extends GetxController {
   final controllerAmount = TextEditingController();
   final controllerDate = TextEditingController();
 
+  var dateNow = "";
+
+  @override
+  onInit(){
+    dateNow = DateTime.now().toString();
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('yyyy-MM-dd').format(now);
+    dateNow = formattedDate;
+    super.onInit();
+  }
+
 
   pickDate() async {
     DateTime? dateTime = await showDatePicker(
