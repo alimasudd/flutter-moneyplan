@@ -15,14 +15,14 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: AppColors.primary,
         child: const Icon(Icons.add, color: Colors.white,),
         onPressed: () async {
-          // Get.toNamed(Routes.ADD_DATA);
-          controller.textEncrypt();
+          Get.toNamed(Routes.ADD_DATA);
+          // controller.textEncrypt();
         },
       ),
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         foregroundColor: Colors.white,
-        title: const Text('Home')
+        title: const Text('Dompetku')
       ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
