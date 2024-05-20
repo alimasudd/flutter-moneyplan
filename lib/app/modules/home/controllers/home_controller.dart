@@ -12,8 +12,9 @@ class HomeController extends GetxController {
 
   Stream<List<ManageModel>> readRecords() => FirebaseFirestore.instance
       .collection('records')
-  .snapshots()
-  .map((snapshot) =>
+      .orderBy("date", descending: true)
+      .snapshots()
+      .map((snapshot) =>
   snapshot.docs.map((e) => ManageModel.fromJson(e.data())).toList());
 
   Future<ManageModel?> readUser() async{
